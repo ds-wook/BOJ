@@ -18,7 +18,7 @@
 
 - 함수, 변수, 속성 : `lowercase_underscore`
 - 보호(protected) 인스턴스 속성 : `_leading_underscore`
-- 비공개(private) 인스턴스 속성 : `__double_leading_undersocre`
+- 비공개(private) 인스턴스 속성 : `__double_leading_underscore`
 - 클래스와 예외 : `CapitalizeWord`
 - 모듈 수준 상수 : ALL_CAPS
 - 클래스의 인스턴스 메서드에서는 첫번째 파라미터 (해당 객체 참조)의 이름을 `self`로 지정
