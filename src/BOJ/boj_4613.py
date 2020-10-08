@@ -1,5 +1,5 @@
 # 4613 QUICKSUM
-codes = {c : i for i, c in enumerate(" ABCDEFGHIJKLMNOPQRSTUVWXYZ")}
+codes = {c: i for i, c in enumerate(" ABCDEFGHIJKLMNOPQRSTUVWXYZ")}
 while True:
     massage = input()
     if massage == "#":

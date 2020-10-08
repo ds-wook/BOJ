@@ -1,7 +1,9 @@
-from typing import List
 # 2631 줄세우기
+from typing import List
+
 N = int(input())
 children = [int(input()) for _ in range(N)]
+
 
 def lis(arr: List[int]) -> int:
     MAX = 0
@@ -15,5 +17,6 @@ def lis(arr: List[int]) -> int:
         MAX = 0
 
     return max(dp)
+
 
 print(N - lis(children))

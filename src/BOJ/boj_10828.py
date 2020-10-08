@@ -1,27 +1,29 @@
 import sys
 
+
 class Stack:
     def __init__(self):
         self.list = []
-    
+
     def push(self, num: str) -> None:
         self.list.append(num)
-    
+
     def pop(self) -> int:
         if self.size() == 0:
             return -1
         pop_result = self.list[-1]
         del self.list[-1]
         return pop_result
-    
+
     def size(self) -> int:
         return len(self.list)
-    
+
     def empty(self) -> int:
         return 1 if not self.list else 0
-    
+
     def top(self) -> int:
         return -1 if not self.list else self.list[-1]
+
 
 line = int(sys.stdin.readline())
 stack = Stack()

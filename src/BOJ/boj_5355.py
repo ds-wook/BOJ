@@ -1,9 +1,11 @@
 # 5355 화성수학
-line = int(input())
+import sys
+
+line = int(sys.stdin.readline())
 for _ in range(line):
-    calculate = [s for s in input().split()]
+    calculate = [s for s in sys.stdin.readline().split()]
     answer = 0.0
-    for i, op in enumerate(mars):
+    for i, op in enumerate(calculate):
         if i == 0:
             answer += float(op)
         else:
@@ -13,4 +15,4 @@ for _ in range(line):
                 answer += 5
             elif op == '@':
                 answer *= 3
-    print(f'{number:.2f}')
+    print(f'{answer:.2f}')

@@ -5,6 +5,7 @@ def isPalindrome(number: int) -> bool:
             return False
     return True
 
+
 while True:
     number = int(input())
     if number == 0:
