@@ -2,43 +2,39 @@ from typing import Dict, Set
 from collections import deque
 import sys
 
-graph = {}
 node, edge, start = map(int, sys.stdin.readline().split())
-for i in range(edge):
+graph = {i: [] for i in range(1, node+1)}
+
+for i in range(1, edge + 1):
     n1, n2 = map(int, sys.stdin.readline().split())
-    if n1 not in graph:
-        graph[n1] = set([n2])
-    elif n2 not in graph[n1]:
-        graph[n1].update([n2])
-    if n2 not in graph:
-        graph[n2] = set([n1])
-    elif n1 not in graph[n2]:
-        graph[n2].update([n1])
+    graph[n1].append(n2)
+    graph[n2].append(n1)
+
+for key in graph:
+    graph[key].sort()
 
 
 def dfs(graph: Dict[int, Set[int]], root: int) -> str:
-    visited = []
+    visited = {}
     stack = [root]
     while stack:
         n = stack.pop()
         if n not in visited:
-            visited.append(n)
-            if n in graph:
-                push = sorted(list(set(graph[n]) - set(visited)), reverse=True)
-                stack += push
+            visited.setdefault(n)
+            print(visited)
+            stack += reversed(graph[n])
     return ' '.join([str(v) for v in visited])
 
 
 def bfs(graph: Dict[int, Set[int]], root: int) -> str:
-    visited = []
+    visited = {}
     queue = deque([root])
     while queue:
         n = queue.popleft()
         if n not in visited:
-            visited.append(n)
-            if n in graph:
-                push = sorted(list(set(graph[n]) - set(visited)))
-                queue += push
+            visited.setdefault(n)
+            print(visited)
+            queue += graph[n]
     return ' '.join([str(v) for v in visited])
 
 
